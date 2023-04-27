@@ -11,13 +11,20 @@ fetch('golfer-data.json')
 
     let out = "";
 
+    
+
     for(let golfer of golfers){
+
+        let handicap = (golfer.score - golfer.par);
+
+        let handicapNine = handicap / 2;
+
         out += `
            <tr>
               <td>${golfer.golferName}</td>
               <td>${golfer.score}</td>
-              <td>${golfer.nineHandicap}</td>
-              <td>${golfer.handicap}</td>
+              <td>${handicapNine}</td>
+              <td>${handicap}</td>
               <td>${golfer.par}</td>
            </tr>
         `;
